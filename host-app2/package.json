@@ -1,0 +1,27 @@
+{
+  "name": "host-app2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true next start",
+    "lint": "NEXT_PRIVATE_LOCAL_WEBPACK=true next lint"
+  },
+  "dependencies": {
+    "next": "14.2.20",
+    "react": "^18",
+    "react-dom": "^18",
+    "webpack": "^5.94.0"
+  },
+  "devDependencies": {
+    "@module-federation/nextjs-mf": "^8.8.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.20",
+    "typescript": "^5"
+  }
+}

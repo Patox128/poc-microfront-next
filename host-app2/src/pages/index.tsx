@@ -14,15 +14,15 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// const RemoteComponent = dynamic(() => import("remote-app/button"), {
-//   ssr: false,
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// }) as any;
-
-const MyRemoteComponent = dynamic(() => import("microfront/OrderModule"), {
+const RemoteComponent = dynamic(() => import("remote-app/button"), {
   ssr: false,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }) as any;
+
+// const MyRemoteComponent = dynamic(() => import("microfront/OrderModule"), {
+//   ssr: false,
+//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// }) as any;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // const MyRemoteComponent = dynamic(() => import("microfront/OrderModule").then((mod) => mod.MyComponent)) as any;
@@ -39,7 +39,7 @@ export default function Home() {
       <div className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}>
         <main className={styles.main}>
           Hola mundo desde host-app
-          <MyRemoteComponent />
+          <RemoteComponent />
         </main>
       </div>
     </>

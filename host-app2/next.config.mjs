@@ -6,17 +6,13 @@ const nextConfig = {
     const { isServer } = options;
     config.plugins.push(
       new NextFederationPlugin({
-        name: "host-app",
+        name: "host-app2",
         filename: "static/chunks/remoteEntry.js",
         remotes: {
           "remote-app": `remote-app@http://localhost:3001/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
-          microfront: "microfront@http://localhost:4201/remoteEntry.js",
         },
         force: true,
-        shared: {
-          "@angular/core": { singleton: true, strictVersion: true },
-          "@angular/common": { singleton: true, strictVersion: true },
-        },
+        shared: {},
         exposes: {},
       })
     );
